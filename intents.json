@@ -7,12 +7,12 @@
     {
         "tag": "ubicacion",
         "patterns": ["ubicacion", "donde estan", "donde te encuentras"],
-        "responses": ["¡Claro! Haz clic <a href='https://maps.app.goo.gl/8Uvte3EdQUCNqRpA6' target='_blank'>aqui</a> para saber como llegar."]
+        "responses": ["¡Claro! Haz clic <a href='https://maps.app.goo.gl/example' target='_blank'>aqui</a> para saber como llegar."]
     },
     {
         "tag": "telefono",
         "patterns": ["telefono", "de contacto", "llamar"],
-        "responses": ["Puede comunicarse al 33-4006-4860 por llamada o vía whatsapp :)"]
+        "responses": ["Puede comunicarse al xx-xxxx-xxxx por llamada o vía whatsapp :)"]
     },
     {
         "tag": "equipo_caida",
