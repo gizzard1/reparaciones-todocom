@@ -1,0 +1,103 @@
+[
+    {
+        "tag": "saludo",
+        "patterns": ["hola", "buenos dias", "buenas tardes", "buenas noches","disponible"],
+        "responses": ["¡Hola! ¿En que puedo ayudarte hoy?"]
+    },
+    {
+        "tag": "ubicacion",
+        "patterns": ["ubicacion", "donde estan", "donde te encuentras"],
+        "responses": ["¡Claro! Haz clic <a href='https://maps.app.goo.gl/8Uvte3EdQUCNqRpA6' target='_blank'>aqui</a> para saber como llegar."]
+    },
+    {
+        "tag": "telefono",
+        "patterns": ["telefono", "de contacto", "llamar"],
+        "responses": ["Puede comunicarse al 33-4006-4860 por llamada o vía whatsapp :)"]
+    },
+    {
+        "tag": "equipo_caida",
+        "patterns": ["pantalla", "quebrada", "caida"],
+        "responses": ["¿El equipo enciende? (Si/No)"],
+        "context": ["equipo_caida_encendido"]
+    },
+    {
+        "tag": "equipo_caida_encendido",
+        "patterns": ["si enciende", "enciende", "funciona pero rota"],
+        "responses": ["¿La bisagra esta desprendida? (Si/No)"],
+        "context": ["equipo_caida_bisagra"]
+    },
+    {
+        "tag": "equipo_caida_bisagra",
+        "patterns": ["si esta desprendida", "bisagra rota", "se zafo la bisagra"],
+        "responses": ["¿Cual es la marca del equipo?"],
+        "context": ["equipo_marca"]
+    },
+    {
+        "tag": "equipo_marca",
+        "patterns": ["hp", "pavillion", "acer aspire", "thinkpad", "ideapad"],
+        "responses": [
+            "¿Podría indicarme el modelo del equipo?"
+        ],
+        "context": ["cotizacion"]
+    },
+    {
+        "tag": "cotizacion",
+        "patterns": ["L390", "3470"],
+        "responses": [
+            "Tengo la información necesaria. ¿Le gustaría recibir una cotización por correo o vía whatsapp?"
+        ],
+        "context": ["solicitar_correo"]
+    },
+    {
+        "tag": "solicitar_correo",
+        "patterns": ["si, enviar cotizacion"],
+        "responses": ["Por favor, proporciona tu correo electronico:"],
+        "context": ["cotizacion_enviar"]
+    },
+    {
+        "tag": "cotizacion_enviar",
+        "patterns": ["claro", "por favor", "si", "@"],
+        "responses": [
+            "La cotización se ha enviado exitosamente. Si tiene dudas o requiere un soporte extra, puede encontrar nuestros datos de contacto en la cotización enviada o por este medio"
+        ],
+        "context": [""]
+    },
+    {
+        "tag": "equipo_lento",
+        "patterns": ["esta lenta", "muy lenta", "lento","lenta"],
+        "responses": ["Podemos mejorar el rendimiento cambiando a un SSD. ¿Quieres mas informacion?"],
+        "context": ["ofrecer_cotizacion"]
+    },
+    {
+        "tag": "ofrecer_cotizacion",
+        "patterns": ["ok", "si", "esta bien","va"],
+        "responses": ["Podemos mejorar el rendimiento cambiando a un SSD. ¿Quieres mas informacion?"],
+        "context": ["despedida"]
+    },
+    {
+        "tag": "ofrecer_cotizacion",
+        "patterns": ["esta lenta", "muy lenta", "lento","lenta"],
+        "responses": ["Podemos mejorar el rendimiento cambiando a un SSD. ¿Quieres mas informacion?"],
+        "context": ["generar_cotizacion"]
+    },
+    {
+        "tag": "cambio_componente",
+        "patterns": ["quiero cambiar una pieza", "necesito un repuesto", "cambio de componente","ampliar ram","mejorar rendimiento"],
+        "responses": ["¿Que componente necesitas cambiar? (Display, Bateria, Teclado, Mousepad, Almacenamiento, RAM)"]
+    },
+    {
+        "tag": "cambio_componente_almacenamiento",
+        "patterns": ["almacenamiento", "cambiar disco", "necesito mas espacio"],
+        "responses": ["¿Quieres cambiar a un SSD o prefieres un HDD?"]
+    },
+    {
+        "tag": "cambio_componente_ssd",
+        "patterns": ["quiero un SSD", "cambiar a SSD"],
+        "responses": ["¡Excelente eleccion! Aqui hay una tabla con marcas y capacidades mas vendidas."]
+    },
+    {
+        "tag": "despedida",
+        "patterns": ["gracias", "eso es todo", "adios"],
+        "responses": ["¡Gracias por contactarnos! Si necesitas mas ayuda, estamos aqui."]
+    }
+]
